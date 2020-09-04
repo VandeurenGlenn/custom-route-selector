@@ -1,6 +1,6 @@
 {
   "name": "custom-route-selector",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A navigating selector which listens for hashchange events & designed to work with custom-route-pages",
   "main": "index.js",
   "scripts": {
