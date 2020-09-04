@@ -1,0 +1,16 @@
+{
+  "name": "custom-route-selector",
+  "version": "1.0.1",
+  "description": "A navigating selector which listens for hashchange events & designed to work with custom-route-pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "flat": true,
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "custom-select-mixins": "^0.13.0"
+  }
+}
