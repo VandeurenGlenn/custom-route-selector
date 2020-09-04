@@ -54,7 +54,7 @@ export default define(class CustomRouteSelector extends SelectorMixin(HTMLElemen
       return
     }
     
-    const hash = target.getAttribute('hash')
+    const hash = target.getAttribute('hash') || target.getAttribute(this.getAttribute('attr-for-selected'))
     location.hash = this.hashBang ? `!/${hash}` : hash
   }
 });
