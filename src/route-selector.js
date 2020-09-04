@@ -11,6 +11,10 @@ export default define(class CustomRouteSelector extends SelectorMixin(HTMLElemen
     this.removeAttribute('hash-bang')
   }
   
+  get hash() {
+    return this.hashBang ? location.hash.replace('#!/') : location.hash.replace('#')
+  }
+  
   constructor() {
     super();
     this._onhashchange = this._onhashchange.bind(this)
@@ -26,11 +30,17 @@ export default define(class CustomRouteSelector extends SelectorMixin(HTMLElemen
     if (super.connectedCallback) super.connectedCallback()
     
     globalThis.onhashchange = this._onhashchange
+    
+    if (!this.selected) {
+      if (location.hash.length !== 0) {
+        this.select(this.hash)
+        return this.onhashchange()
+      }
+    }
   }
   
   _onhashchange() {
-    const detail = this.hashBang ? location.hash.replace('#!/') : location.hash.replace('#')
-    
+    const detail = this.hash    
     document.dispatchEvent(new CustomEvent('route-selected', { detail }))
   }
   
