@@ -26,4 +26,4 @@
 
 
 ### click()
-dispatches 'route-selected' event
+dispatches 'route-selected' event on document

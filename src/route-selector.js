@@ -31,7 +31,7 @@ export default define(class CustomRouteSelector extends SelectorMixin(HTMLElemen
   _onhashchange() {
     const detail = this.hashBang ? location.hash.replace('#!/') : location.hash.replace('#')
     
-    this.dispatchEvent(new CustomEvent('route-selected', { detail }))
+    document.dispatchEvent(new CustomEvent('route-selected', { detail }))
   }
   
   _onClick(event) {
